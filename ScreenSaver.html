@@ -1,0 +1,87 @@
+<html>
+
+<head>
+
+<title>Screen saver</title>
+
+<script type="text/javascript">
+
+var imgObj=null;
+
+var animate;
+
+function init()
+
+{
+
+imgObj=document.getElementById('myimages');
+
+imgObj.style.position='relative';
+
+imgObj.style.left='0px';
+
+moveRight();
+
+}
+
+function moveL()
+
+{
+
+if(parseInt(imgObj.style.left)<=0)
+
+{
+
+moveRight();
+
+}
+
+else
+
+{
+
+imgObj.style.left=parseInt(imgObj.style.left)-100+'px';
+
+animate=setTimeout(moveL,500);
+
+}
+
+}
+
+function moveRight()
+
+{
+
+if(parseInt(imgObj.style.left)>=1000)
+
+{
+
+moveL();
+
+}
+
+else
+
+{
+
+imgObj.style.left=parseInt(imgObj.style.left)+100+'px';
+
+animate=setTimeout(moveRight,500);
+
+}
+
+}
+
+window.onload=init;
+
+</script>
+
+</head>
+
+<body>
+
+<img id="myimages" src="C:\Users\arund\Desktop\pic\_DSC0470.JPG"width=200 height=200 />
+
+</body>
+
+</html
